@@ -1,0 +1,63 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/adminUI.css' %}">
+    <script src="https://kit.fontawesome.com/bfe52372c2.js" crossorigin="anonymous"></script>
+    <script defer src="{% static 'js/adminUI.js' %}"></script>
+</head>
+<body>
+    <div class="container">
+        <h1 class="heading">Welcome to ADMIN UI</h1>
+        <div class="inner-container">
+            <div class="addBooks" onclick="createAddBookFields()">
+                <img src="{% static 'images/add_book.png'%}" alt="library" class="image">
+                <h1 class="card-heading">Add Books</h1>
+            </div>
+
+            <div class="deleteBooks" onclick="createDeleteBookFields()">
+                <img src="{% static 'images/delete_book.png'%}" alt="library" class="image">
+                <h1 class="card-heading">Delete Books</h1>
+            </div>
+
+            <div class="viewBooks" id="viewBooksButton" onclick="createViewAllBooksFields()">
+                <img src="{% static 'images/view_books.jpg'%}" alt="library" class="image">
+                <h1 class="card-heading">View Books</h1>
+            </div>
+
+            <div class="addUsers" onclick="createAddUserFields()">
+                <img src="{% static 'images/add_user.png'%}" alt="library" class="image">
+                <h1 class="card-heading">Add User</h1>
+            </div>
+
+            <div class="deleteUser" onclick="createDeleteUserFields()">
+                <img src="{% static 'images/delete_user.png'%}" alt="library" class="image">
+                <h1 class="card-heading">Delete User</h1>
+            </div>
+
+            <div class="updateUser" onclick="createUpdateUserFields()">
+                <img src="{% static 'images/update_user.png'%}" alt="library" class="image">
+                <h1 class="card-heading">Update User</h1>
+            </div>
+
+            <div class="updateUser" id="viewUserButton" onclick="createViewUsersFields()">
+                <img src="{% static 'images/view_users.png'%}" alt="library" class="image">
+                <h1 class="card-heading">View Users</h1>
+            </div>
+
+            <!-- <div class="updateUser" id="viewUserButton" onclick="createViewRequestsFields()">
+                <img src="{% static 'images/request.jpg'%}" alt="library" class="image">
+                <h1 class="card-heading">View Requests</h1>
+            </div> -->
+        </div>
+        <div class="dynamic-admin-field">
+                
+        </div>
+        
+    </div>
+</body>
+</html>

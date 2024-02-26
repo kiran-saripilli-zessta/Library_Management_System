@@ -1,0 +1,104 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/bfe52372c2.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}">
+    <script defer src="{% static 'js/index.js' %}"></script>
+</head>
+<body>
+    <div class="container">
+        <nav class="nav-bar">
+            <img loading="lazy" src="{% static 'images/book_logo.png' %}" class="book-logo" alt="Library Logo">
+            <div class="search-section">
+                <input type="search" name="search-bar" id="search-box" placeholder="Enter your book name" onkeydown="handleEnterPressEvent(event)">
+                <i class="fa-solid fa-magnifying-glass" onclick="fetchEnteredQuery()"></i>
+            </div>
+            <div class="quick-links">
+              <a href="/loan-records/">Loan Records</a>
+              <a href="/newBooks/">New Arrivals</a>
+              <a href="/about-us/">About Us</a>
+              <a id="myProfile">Profile</a>
+              <a href="/view-notifications/" style="margin-left: 10px;"><i class="fa-solid fa-bell"></i></a>
+            </div>
+            <div class="button-container">
+                {% if user.is_authenticated %}
+                    <button type="submit" id="loginBtn" class="login-btn">Logout</button>
+                {% else %}
+                    <button type="submit" id="loginBtn" class="login-btn">Sign In</button>
+                    {% endif %}
+                <button type="submit" id="signupBtn" class="login-btn">Signup</button>
+            </div>
+        </nav>
+        <section class="image-container">
+            <div class="left-container">
+                <h1 class="image-main-heading">Library Management System</h1>
+                <span class="image-subheading">Managing Library</span>
+                <button type="submit" id="getStartedBtn">Get Started</button>
+            </div>
+            <div class="right-container">
+                <img loading="lazy" src="{% static 'images/library.jpg'%}" alt="library" class="image">
+            </div>
+        </section>
+        <div class="features-container">
+            <div class="card1" id="availableCardBtn">
+                <div class="feature-heading-container">
+                    <div class="icon"><i class="fa-solid fa-user"></i></div>
+                    <h1 class="feature-heading">Available Books</h1>
+                </div>
+                <hr>
+                <div class="image-cont">
+                    <img loading="lazy" src="{% static 'images/available_books.jpg'%}" alt="library" >
+                </div>
+                <div class="content-container">
+                    <p class="card-content">Explore the abundance of knowledge at your fingertips on the "Available Books" page in our Library Management System. Browse, reserve, and delve into a world of literary treasures effortlessly.</p>
+                </div>
+            </div>
+            <div class="card1" id="newArrivalCardBtn">
+                <div class="feature-heading-container">
+                    <div class="icon"><i class="fa-solid fa-bag-shopping"></i></div>
+                    <h1 class="feature-heading">New Arrivals</h1>
+                </div>
+                <hr>
+                <div class="image-cont">
+                    <img loading="lazy" src="{% static 'images/new_arrival.png'%}" alt="library" >
+                </div>
+                <div class="content-container">
+                    <p class="card-content">Explore our latest arrivals in the Library Management System, offering cutting-edge features for efficient cataloging, easy check-ins/outs, and seamless resource tracking. Elevate your library experience with user-friendly navigation and advanced functionalities.</p>
+                </div>
+            </div>
+            <div class="card1" id="authorCardBtn">
+                <div class="feature-heading-container">
+                    <div class="icon"><i class="fa-solid fa-house"></i></div>
+                    <h1 class="feature-heading">Authors</h1>
+                </div>
+                <hr>
+                <div class="image-cont">
+                    <img loading="lazy" src="{% static 'images/author.jpg'%}" alt="library" >
+                </div>
+                <div class="content-container">
+                    <p class="card-content">Discover literary gems by your favorite authors in our Library Management System, simplifying author-based searches and enriching your reading journey with curated collections. Dive into a world of knowledge with ease and efficiency.</p>
+                </div>
+            </div>
+            <div class="card1" id="genreCardBtn">
+                <div class="feature-heading-container">
+                    <div class="icon"><i class="fa-solid fa-clipboard-user"></i></div>
+                    <h1 class="feature-heading">Genres</h1>
+                </div>
+                <hr>
+                <div class="image-cont">
+                    <img loading="lazy" src="{% static 'images/genre.jpg'%}" alt="library" >
+                </div>
+                <div class="content-container">
+                    <p class="card-content">Navigate literary landscapes effortlessly with our Library Management System's genre feature. Explore curated collections and discover your preferred reading realms with a simple click, enhancing your library experience.</p>
+                </div>
+            </div>
+        </div>
+            
+    </div>
+</body>
+</html>

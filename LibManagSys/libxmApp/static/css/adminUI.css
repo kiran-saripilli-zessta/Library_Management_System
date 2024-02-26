@@ -1,0 +1,134 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+.container{
+    height: 100vh;
+    max-width: 100vw;
+    background-color: #D5F0C1;
+    padding: 20px;
+}
+
+.inner-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top:30px;
+}
+
+.inner-container div{
+    /* border: 1px solid black; */
+    height: 250px;
+    width: 250px;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-radius:10px;
+    cursor: pointer;
+    padding: 5px;
+    text-align: center;
+}
+
+.inner-container div:hover{
+    box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+}
+
+.card-heading{
+    font-size: 25px;
+    text-transform: uppercase;
+}
+
+
+.inner-container div img{
+    height: 50%;
+    max-width: 100%;
+}
+.heading{
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 45px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.dynamic-admin-field{
+    max-width: 100vw;
+    height: 500px;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+input {
+    width: 60%;
+    height: 45px;
+    padding: 8px;
+    margin-bottom: 16px;
+    box-sizing: border-box;
+    border: 1px solid #f0ee93;
+    border-radius: 4px;
+    color: #000;
+    outline: none;
+}
+
+button {
+    display: block;
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    height: 50px;
+    width: 130px;
+    cursor: pointer;
+    font-size: 18px;
+    text-transform: uppercase;
+    margin-top: 15px;
+}
+
+button:hover {
+    background-color: transparent;
+    border: 0.5px solid black;
+    color: #000;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+/* Table header styles */
+thead {
+    background-color: #f2f2f2;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Alternating row colors for better readability */
+tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Hover effect on table rows */
+tbody tr:hover {
+    background-color: #e5e5e5;
+}
+

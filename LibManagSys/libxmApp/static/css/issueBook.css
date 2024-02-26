@@ -1,0 +1,10 @@
+#modalContainer {
+    transition: opacity 0.5s, transform 0.5s;
+    opacity: 1;
+    transform: scale(1);
+}
+
+#modalContainer.hidden {
+    opacity: 0;
+    transform: scale(0.5);
+}

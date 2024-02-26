@@ -1,0 +1,69 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/bfe52372c2.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/loanPage.css' %}">
+</head>
+<body>
+    <div class="main-container">
+        <div class="back-btn-container">
+            <i class="fa-solid fa-arrow-left" onclick="goBack()"></i>
+            <h1 class="heading">Welcome to your Loan Records</h1>
+        </div>
+        <div class="tableContainer">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Book Title</th>
+                        <th>Loan Date</th>
+                        <th>Return Date</th>
+                        <th>Due Date</th>
+                        <th>Loan Status</th>
+                        <th>Fine</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for loan in on_loan_books %}
+                        <tr>
+                            <td>{{ loan.book.book_title }}</td>
+                            <td>{{ loan.loan_date }}</td>
+                            <td>{{ loan.return_date }}</td>
+                            <td>{{ loan.due_date }}</td>
+                            <td>{{ loan.loan_status }}</td>
+                            <td>{{ loan.fine }}</td>
+                            <td class="loan-button-container">
+                                <button id="bookReturnBtn" onclick="returnBook('{{ loan.id }}')">Return</button>
+                                <!-- <button id="payFineBtn" onclick="openModal('{{ loan.book.book_title }}')">Pay Fine</button> -->
+                            </td>
+                        </tr>
+                    {% endfor %}
+                    {% for loan in returned_books %}
+                    <tr>
+                        <td>{{ loan.book.book_title }}</td>
+                        <td>{{ loan.loan_date }}</td>
+                        <td>{{ loan.return_date }}</td>
+                        <td>{{ loan.due_date }}</td>
+                        <td>{{ loan.loan_status }}</td>
+                        <td>{{ loan.fine | default:"NaN" }}</td>
+                        <td class="loan-button-container">
+                            <button id="bookReturnBtn">Details</button> 
+                            <!-- <button id="payFineBtn" onclick="openModal('{{ loan.book.book_title }}')">Pay Fine</button> -->
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script>
+        window.loggedUsername = "{{ request.session.logged_username }}";
+    </script>
+    <script src="{% static 'js/loanPage.js' %}"></script>
+</body>
+</html>

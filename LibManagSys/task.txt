@@ -1,0 +1,52 @@
+Book Import-Export:
+
+Handling Related Models:
+Include the Genre model as a related field in the export and enable importing books with related genre data.
+
+Custom Export Field:
+Implement a custom export field that calculates the availability status of each book based on the quantity available.
+
+Custom Import-Export:
+Implement a custom import-export process that validates and updates existing book records based on a unique identifier, such as the ISBN.
+
+
+
+
+Member Import-Export:
+
+Handling Related Models:
+Include the Book model as a related field in the export and enable importing members with related books borrowed data.
+
+Custom Export Field:
+Implement a custom export field that calculates the total late fees for all borrowed books.
+
+File Upload/Download:
+Handle file attachments for the member's photo, allowing importing/exporting members with profile pictures.
+
+
+
+
+Task for Trainee - LoanRecord Import-Export:
+
+Handling Related Models:
+Include the Member and Book models as related fields in the export and enable importing loan records with related member and book data.
+
+Custom Import Field:
+Implement a custom import field that automatically sets the due date based on the borrowing date and the standard borrowing period.
+
+Custom Import-Export:
+Implement a custom import-export process that checks for overdue books and updates the status accordingly during the import.
+
+
+
+
+
+
+Signals Task:
+1. Implement a signal to update the book availability status whenever a new loan record is added or an existing record is deleted.
+2. Create a signal to notify the library staff when a book is overdue based on the return date.
+
+
+
+Middleware task:
+Implement a middleware that checks if the requested book is available and redirects to a 'Book Not Available' page if it is not.

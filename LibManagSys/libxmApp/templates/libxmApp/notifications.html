@@ -1,0 +1,53 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notifications</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/notifications.css' %}">
+    <script src="https://kit.fontawesome.com/bfe52372c2.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="main-container">
+        <div class="back-btn-container">
+            <i class="fa-solid fa-arrow-left" onclick="goBack()"></i>
+            <h1 class="heading">Notifications</h1>
+        </div>
+        <div class="notifications-container">
+            {% if notifications %}
+                <table>
+                    <thead>
+                        <tr>
+                            <th>User</th>
+                            <th>Book Name</th>
+                            <th>Due Date</th>
+                            <th>Fine</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for notification in notifications %}
+                            <tr>
+                                <td>{{ notification.user.username }}</td>
+                                <td>{{ notification.book_name }}</td>
+                                <td>{{ notification.due_date|date:"M. d, Y" }}</td>
+                                <td>{{ notification.fine }}</td>
+                                <td>
+                                    <button onclick="removeNotification('{{ notification.id }}')">
+                                        <i class="fa-solid fa-times"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            {% else %}
+                <p>No notifications available.</p>
+            {% endif %}
+        </div> 
+    </div>
+    <script src="{% static 'js/notification.js' %}"></script>
+</body>
+</html>

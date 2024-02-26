@@ -1,0 +1,26 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/signup.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1 class="heading">Enter your Signup Details</h1>
+        <div class="cred-container">
+            <div class="button-container">
+                <button class="choice-btn" onclick="createAdminFields()">ADMIN</button>
+                <button class="choice-btn" onclick="createUserFields()">USER</button>
+            </div>
+            <div id="dynamicFields">
+                
+            </div>
+        </div>
+        <script src="{% static 'js/signup.js' %}"></script>
+    </div>
+</body>
+</html>
